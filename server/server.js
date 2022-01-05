@@ -15,10 +15,10 @@ app.use('/poi/resto/menu',require('./src/routes/menu.routes'))
 app.use('/poi/askcommunity',require('./src/routes/askcommunity.routes'))
 app.use('/cart',require('./src/routes/cart.routes'))
 
-const PORT = 8080 
+const PORT = 8585
 
 app.listen(PORT,(req,res)=>{
-    console.log("running ok")
+    console.log("Node Server running on",PORT)
     const sql = "select * from csm_user"
 })
 
