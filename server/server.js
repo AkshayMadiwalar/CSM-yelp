@@ -15,7 +15,7 @@ app.use('/poi/resto/menu',require('./src/routes/menu.routes'))
 app.use('/poi/askcommunity',require('./src/routes/askcommunity.routes'))
 app.use('/cart',require('./src/routes/cart.routes'))
 
-const PORT = process.env.PORT || 5000 
+const PORT = 8080 
 
 app.listen(PORT,(req,res)=>{
     console.log("running ok")
