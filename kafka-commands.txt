@@ -1,0 +1,23 @@
+Zookeeper Server ->  .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+Kafka Server -> .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+Create topic -> kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+Producer -> kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+Consumer -> kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test
+
+
+------AWS MSK----
+
+GET Zookeeper Connection String
+aws kafka describe-cluster --region us-east-1 --cluster-arn  "msk arn"
+
+
+z-3.demo-cluster-1.x4m9r1.c16.kafka.us-east-1.amazonaws.com:2181
+z-1.demo-cluster-1.x4m9r1.c16.kafka.us-east-1.amazonaws.com:2181
+z-2.demo-cluster-1.x4m9r1.c16.kafka.us-east-1.amazonaws.com:2181
+
+
+kafka-topics.bat --create --zookeeper z-3.demo-cluster-1.x4m9r1.c16.kafka.us-east-1.amazonaws.com:2181 --replication-factor 1 --partitions 1 --topic test
